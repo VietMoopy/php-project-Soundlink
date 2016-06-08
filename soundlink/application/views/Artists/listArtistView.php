@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet" />
-		<title>Albums</title>
+		<title>Artists</title>
 	</head>
 	<body>
 		<div class="container">
@@ -20,11 +20,10 @@
 		
 		
 		<FORM method='get' action='listAlbumView.php'>
-		  <p>Name<br>
-		    <input type="text" name="name"/><br>Release Date<br>
-		    <input type="date" name="releaseDate"/><br>Genre<br>
-		    <input type="text" name="genre"/><br>Artist<br>
-		    <input type="text" name="artist"/><br>
+		  <p>Pseudo<br>
+		    <input type="text" name="name"/><br>Birthdate<br>
+		    <input type="date" name="birthDate"/><br>Description<br>
+		    <textarea name="description" rows="5" cols="25"/><br>
 		    <input type="submit" value="Ok" />
 		  </p>
 		  <?php
@@ -32,25 +31,19 @@
 		     if(isset($_GET['name'])){
 		     $name = $_GET['name'];
 		     }
-		     if(isset($_GET['releaseDate'])){
-		     $releaseDate = $_GET['releaseDate'];
+		     if(isset($_GET['birthDate'])){
+		     $birthDate = $_GET['birthDate'];
 		     }
-		     if(isset($_GET['genre'])){
-		     $genre = $_GET['genre'];
-		     }
-		     if(isset($_GET['artist'])){
-		     $artist = $_GET['artist'];
+		     if(isset($_GET['description'])){
+		     $description = $_GET['description'];
 		     }
 		     $link = new PDO("dwarves.iut-fbleau.fr/","navales","JwLy54NVALVQDRAn");
 		     if(!$link){
 		     die("<p>Connexion au serveur impossible</p>");
 		     }
-		     if(isset($artist)){
-		     $real = $link->query("select idA from MuArtist where \"$artist\" = nomA");
-		     }
-		     if(isset($name) && isset($releasedate) && isset($genre) && isset($artist)){
-		     $link->query("insert into MuAlbum(name,releaseDate,genre,idArtist) 
-					 values (\"$name\",\"$releaseDate\",\"$genre\",\"$real\")");
+		     if(isset($name) && isset($birthDate) && isset($description)){
+		     $link->query("insert into MuArtist(name,birthDate,description) 
+					 values (\"$name\",\"$birthDate\",\"$description\")");
 		     }
 		     ?>
 		</FORM>
@@ -59,14 +52,13 @@
 		  <thead>
 		    <tr>
 		      <th>Name</th>
-		      <th>Release Date</th>
-		      <th>Genre</th>
-		      <th>Artist</th>
+		      <th>Birthdate</th>
+		      <th>Description</th>
 		      <th>Link</th>
 		    </tr>
 		  </thead>
 		  <?php
-		     $res = $link->query("select name, releaseDate, genre, nameA from MuArtist natural join MuAlbum");
+		     $res = $link->query("select name, birthDate, description from MuArtist");
 		     if(!$res){
 		     echo "Problème";
 		     }
@@ -74,9 +66,8 @@
 		     foreach($res as $value){
 		     echo "<tr>";
 		     echo "<td>".$value["name"]."</td>";
-		     echo "<td>".$value["releaseDate"]."</td>"
-		     echo "<td>".$value["genre"]."</td>"
-		     echo "<td>".$value["nameA"]."</td>"
+		     echo "<td>".$value["birthDate"]."</td>"
+		     echo "<td>".$value["description"]."</td>"
 		     }
 		     }
 		     ?>
