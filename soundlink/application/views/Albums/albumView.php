@@ -18,16 +18,24 @@
       <?php
         $link = new PDO("dwarves.iut-fbleau.fr/","navales","JwLy54NVALVQDRAn");
 		    if(!$link){
-		    die("<p>Connexion au serveur impossible</p>");
+		      die("<p>Connexion au serveur impossible</p>");
 		    }
-        $res = $link->prepare("select name, releaseDate, genre, nameA from MuArtist natural join MuAlbum where idAlbum = :idA ");
-        $res->bindParam(':idA', $idA);
-        $res->execute();
-		     if(!$res){
-		     echo "Problème";
-		     }
-         echo "<h1>".$res["name"]."</h1><br/>";
-         echo "<h5>".$res["releaseDate"]."</h5><br/>";
+        if(!isset($_GET['idA'])){
+          echo "Unfound Album";
+        }
+        else{
+          $idA = $_GET['idA'];
+          $res = $link->prepare("select name, releaseDate, genre, nameA from MuArtist natural join MuAlbum where idAlbum = :idA ");
+          $res->bindParam(':idA', $idA);
+          $res->execute();
+		      if(!$res){
+		      echo "Problème";
+		      }
+          echo "<h1>".$res["name"]."</h1><br/>";
+          echo "<h5>".$res["releaseDate"]."</h5><br/>";
+          echo "<p>".$res["genre"]."</p><br/>";
+          echo "<p>".$res["nameA"]."</p><br/>";
+        }
       ?>      
     <footer>
 			<hr>
