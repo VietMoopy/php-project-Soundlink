@@ -41,7 +41,8 @@
 		     if(isset($_GET['artist'])){
 		     $artist = $_GET['artist'];
 		     }
-		     $link = new PDO("dwarves.iut-fbleau.fr/","navales","JwLy54NVALVQDRAn");
+				
+				 $link = new PDO('mysql:host=dwarves.iut-fbleau.fr;dbname=navales','navales','JwLy54NVALVQDRAn');
 		     if(!$link){
 		     die("<p>Connexion au serveur impossible</p>");
 		     }
