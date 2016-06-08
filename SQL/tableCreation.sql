@@ -1,6 +1,6 @@
 create table MuAdmin(
 login varchar(30) primary key,
-password varchar(30),
+password varchar(30)
 );
 
 create table MuUser(
