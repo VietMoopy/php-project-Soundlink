@@ -66,7 +66,7 @@
 		    </tr>
 		  </thead>
 		  <?php
-		     $link->query("select name, releasedate, genre, nameA from MuArtist natural join MuAlbum");
+		     $res = $link->query("select name, releaseDate, genre, nameA from MuArtist natural join MuAlbum");
 		     if(!$res){
 		     echo "Problème";
 		     }
