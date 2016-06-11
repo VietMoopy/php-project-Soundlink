@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends CI_Controller
+class AlbumController extends CI_Controller
 {
 	
 	private $titre_defaut;
@@ -10,23 +10,17 @@ class IndexController extends CI_Controller
 		//	Obligatoire
 		parent::__construct();
 		
-		//	Maintenant, ce code sera exÃ©cutÃ© chaque fois que ce contrÃ´leur sera appelÃ©.
-		$this->titre_defaut = 'soundlink';
+		//	Maintenant, ce code sera exécuté chaque fois que ce contrôleur sera appelé.
+		$this->titre_defaut = 'Mon super site';
 		$this->load->helper('url');
 	}
 	
 	    public function index()
     {
-        $this->accueil();
+        $this->showAlbumList();
     }
-	
-	public function accueil()
-	{
-		$this->load->view('index/index.html');
-	}
 
-    //  Cette page accepte une variable $_GET facultative
-    public function albums()
+    public function showAlbumList()
     {
         $this->load->view('albums/showAlbums.php');
     }
