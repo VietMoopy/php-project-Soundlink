@@ -2,9 +2,10 @@
 
 class MuArtist extends CI_Model {
 
-    public $title;
-    public $content;
-    public $date;
+    public $idAlbum;
+    public $name;
+    public $birthDate;
+    public $description;
 
     public function __construct() {
         parent::__construct();
@@ -19,18 +20,18 @@ class MuArtist extends CI_Model {
         return $query->result();
     }
 
-    public function insert() {
-        $this->title = 'CodeIgniter 101';
-        $this->content = '<p>Say what you want about CI, it still rocks</p>';
-        $this->date = time();
+    public function insert($name,$birth,$desc) {
+        $this->name = $name;
+        $this->birthDate = $birth;
+        $this->description = $desc;
 
         $this->db->insert('MuArtist', $this);
     }
 
     public function update($id) {
-        $this->title = 'CodeIgniter 101';
-        $this->content = '<p>Say what you want about CI, it still rocks</p>';
-        $this->date = time();
+        $this->name = $name;
+        $this->birthDate = $birth;
+        $this->description = $desc;
 
         $this->db->update('MuArtist', $this, array('id' => $id));
     }

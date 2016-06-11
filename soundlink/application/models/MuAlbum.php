@@ -2,9 +2,12 @@
 
 class MuAlbum extends CI_Model {
 
-    public $title;
-    public $content;
-    public $date;
+    public $idAlbum;
+    public $name;
+    public $releaseDate;
+    public $genre;
+    public $globalrating;
+    public $idArtist;
 
     public function __construct() {
         parent::__construct();
@@ -19,18 +22,20 @@ class MuAlbum extends CI_Model {
         return $query->result();
     }
 
-    public function insert() {
-        $this->title = 'CodeIgniter 101';
-        $this->content = '<p>Say what you want about CI, it still rocks</p>';
-        $this->date = time();
+    public function insert($name,$date,$genre,$idArtist) {
+        $this->name = $name;
+        $this->releaseDate = $date;
+        $this->genre = $genre;
+        $this->globalRating = NULL;
+        $this->idArtist = $idArtist;
 
         $this->db->insert('MuAlbum', $this);
     }
 
-    public function update($id) {
-        $this->title = 'CodeIgniter 101';
-        $this->content = '<p>Say what you want about CI, it still rocks</p>';
-        $this->date = time();
+    public function update($id,$name,$date,$genre) {
+        $this->name = $name;
+        $this->releaseDate = $date;
+        $this->genre = $genre;
 
         $this->db->update('MuAlbum', $this, array('id' => $id));
     }

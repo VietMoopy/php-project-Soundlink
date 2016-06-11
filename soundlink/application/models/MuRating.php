@@ -2,9 +2,11 @@
 
 class MuRating extends CI_Model {
 
-    public $title;
-    public $content;
-    public $date;
+    public $idRating;
+    public $ratingvalue;
+    public $dateRating;
+    public $username;
+    public $idAlbum;
 
     public function __construct() {
         parent::__construct();
