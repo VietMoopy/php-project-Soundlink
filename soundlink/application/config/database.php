@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'dwarves.iut-fbleau.fr',
+	'hostname' => 'mysql:host=dwarves.iut-fbleau.fr',
 	'username' => 'navales',
 	'password' => 'JwLy54NVALVQDRAn',
 	'database' => 'navales',

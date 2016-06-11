@@ -22,7 +22,7 @@ class AlbumController extends CI_Controller
 
     public function showAlbumList()
     {
-        $this->load->view('albums/showAlbums.php');
+        $this->load->view('albums/showListAlbums.php');
     }
 	
 	/*	public function _output($output)
