@@ -66,8 +66,8 @@
 		     foreach($res as $value){
 		     echo "<tr>";
 		     echo "<td>".$value["name"]."</td>";
-		     echo "<td>".$value["birthDate"]."</td>"
-		     echo "<td>".$value["description"]."</td>"
+		     echo "<td>".$value["birthDate"]."</td>";
+		     echo "<td>".$value["description"]."</td>";
 		     }
 		     }
 		     ?>
