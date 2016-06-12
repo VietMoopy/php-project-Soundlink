@@ -15,6 +15,7 @@ class AlbumController extends CI_Controller
 		$this->titre_defaut = 'AlbumsList';
 		$this->load->helper('url');
 		$this->load->model('MuAlbum');
+		$this->load->model('MuArtist');
 	}
 	
 	    public function index()
@@ -26,6 +27,13 @@ class AlbumController extends CI_Controller
     {
         $this->load->view('albums/showAlbumsList.php');
     }
+    
+    public function showAlbum($id)
+    {
+    	$data = array('id' => $id);
+    	$this->load->view('albums/showAlbum.php',$data);
+    }
+    
 	
 	/*	public function _output($output)
 	{
