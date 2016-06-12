@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <link href="<?php echo base_url(); ?>assets/css/bootstrap.css"
 	rel="stylesheet" />
-<title>Artist</title>
+<title>Artists</title>
 </head>
 <body>
 	<div class="container">
@@ -19,53 +19,12 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
-		<table>
-			<thead>
-				<tr>
-					<th>Artist Name</th>
-					<th>BirthDate</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-		  	<?php
-					$query = $this->MuArtist->get($id);?>
-			<tr>
-				<td>
-				<?php
-					echo $query->nameA;?>
-				</td><td>
-				<?php	
-					echo $query->birthDate;?>
-				</td><td>
-				<?php
-					echo $query->description;?>
-				</td></tr>
-		</table>
-		<br/><br/>
-		Albums :<br/>
-		
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Release Date</th>
-					<th>Genre</th>
-					<th>Artist</th>
-				</tr>
-			</thead>
-		  <?php
-				if (! isset ( $name ) && ! isset ( $releasedate ) && ! isset ( $genre ) && ! isset ( $artist ))
-					$query = $this->MuArtist->get_albums($id);
-				foreach($query as $row) {
-					echo "<tr>";
-					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
-					echo "<td>".$row->releaseDate."</td>";
-					echo "<td>".$row->genre."</td>";
-					echo "</tr>";
-				}
-				?>
-		</table>
-		
+      <?php
+          $query = $this->MuArtist->get($id);
+					echo "Name : ".$query->nameA."<br>";
+					echo "BirthDate : ".$query->birthDate."<br>";
+					echo "Description : ".$query->description."<br>";
+      ?>  
     <footer>
 			<hr>
 			<div class="text-center">

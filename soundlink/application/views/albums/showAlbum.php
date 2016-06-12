@@ -19,33 +19,18 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Release</th>
-					<th>Rating</th>
-					<th>Artist</th>
-				</tr>
-			</thead>
-		<?php
-					$query = $this->MuAlbum->get($id);?>
-			<tr>
-				<td>
-				<?php
-					echo $query->name."<br/>";?>
-				</td><td>
-				<?php	
-					echo $query->releaseDate."<br/>";?>
-				</td><td>
-				<?php
+      <?php
+          $query = $this->MuAlbum->get($id);
+          $artist = $this->MuArtist->get($query->idArtist);
+					echo "Name : ".$query->name."<br>";
+					echo "ReleaseDate : ".$query->releaseDate."<br>";
+					echo "Genre : ".$query->genre."<br>";
 					if($query->globalRating != NULL)
 						echo "GlobalRating : ".$query->globalRating."<br>";
 					else
-						echo "GlobalRating : -/5<br>";
-					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$query->idArtist.'\'>'.$query->idArtist."</a></td>";?>
-				</td></tr>
-		</table>
+						echo "GlobalRating : ./5<br>";
+					echo "Artiste : ".$artist->nameA."<br>";
+      ?>  
     <footer>
 			<hr>
 			<div class="text-center">

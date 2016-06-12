@@ -20,7 +20,7 @@
 			</h3>
 		</div>
 		<p class="lead">Artists List</p>
-
+		<a href="<?php echo base_url().'ArtistController/addArtist';?>">Add an artist</a>
 
 		<!-- <FORM method='get' action='listAlbumView.php'>
 			<p>
@@ -57,8 +57,6 @@
 			<thead>
 				<tr>
 					<th>Artist Name</th>
-					<th>BirthDate</th>
-					<th>Description</th>
 				</tr>
 			</thead>
 		  <?php
@@ -67,8 +65,6 @@
 				foreach($query as $row) {
 					echo "<tr>";
 					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->nameA."</a></td>";
-					echo "<td>".$row->birthDate."</td>";
-					echo "<td>".$row->description."</td>";
 					echo "</tr>";
 				}
 				?>
