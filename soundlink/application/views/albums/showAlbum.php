@@ -20,7 +20,7 @@
 			</h3>
 		</div>
 		<?php
-					$query = $this->MuAlbum->get($id)."<br/>";?>
+					$query = $this->MuAlbum->get($id);?>
 			<tr>
 				<td>
 				<?php
