@@ -20,14 +20,13 @@
 			</h3>
 		</div>
       <?php
+      $id;
           $query = $this->MuArtist->get($id);
-					$artist = $this->db->query("select nameA from MuArtist where idArtist = $row->idArtist;")->row();
-					echo "<tr>";
-					echo "<td><a href=''>".$row->nameA."</a></td>";
-					echo "<td><a href=''>".$row->birthDate."</a></td>";
-					echo "<td><a href=''>".$row->description."</a></td>";
-					echo "</tr>";
-      ?>      
+					echo "Name : ".$query->nameA."<br>";
+					echo "BirthDate : ".$query->birthDate."<br>";
+					echo "Description : ".$query->description."<br>";
+      ?>
+      </table>      
     <footer>
 			<hr>
 			<div class="text-center">

@@ -64,7 +64,7 @@
 					$query = $this->MuArtist->get_all();
 				foreach($query as $row) {
 					echo "<tr>";
-					echo "<td><a href=''>".$row->nameA."</a></td>";
+					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->nameA."</a></td>";
 					echo "</tr>";
 				}
 				?>
