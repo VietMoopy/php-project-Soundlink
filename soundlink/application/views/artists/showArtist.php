@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <link href="<?php echo base_url(); ?>assets/css/bootstrap.css"
 	rel="stylesheet" />
-<title>Artists</title>
+<title>Artist</title>
 </head>
 <body>
 	<div class="container">
@@ -21,10 +21,19 @@
 		</div>
       <?php
           $query = $this->MuArtist->get($id);
+<<<<<<< HEAD
 					echo "Name : ".$query->nameA."<br>";
 					echo "BirthDate : ".$query->birthDate."<br>";
 					echo "Description : ".$query->description."<br>";
       ?>  
+=======
+					echo "<tr>";
+					echo "<td><a href=''>".$row->nameA."</a></td>";
+					echo "<td><a href=''>".$row->birthDate."</a></td>";
+					echo "<td><a href=''>".$row->description."</a></td>";
+					echo "</tr>";
+      ?>      
+>>>>>>> origin/master
     <footer>
 			<hr>
 			<div class="text-center">

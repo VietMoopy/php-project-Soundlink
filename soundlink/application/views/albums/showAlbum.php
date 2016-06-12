@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <link href="<?php echo base_url(); ?>assets/css/bootstrap.css"
 	rel="stylesheet" />
-<title>Artists</title>
+<title>Albums</title>
 </head>
 <body>
 	<div class="container">
