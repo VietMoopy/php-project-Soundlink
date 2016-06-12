@@ -19,12 +19,6 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
-      <?php
-          $query = $this->MuArtist->get($id);
-					echo "Name : ".$query->nameA."<br>";
-					echo "BirthDate : ".$query->birthDate."<br>";
-					echo "Description : ".$query->description."<br>";
-      ?>
 		<table>
 			<thead>
 				<tr>
