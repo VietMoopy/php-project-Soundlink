@@ -16,14 +16,6 @@
 			</h3>
 		</div>
       <?php
-        $link = new PDO("dwarves.iut-fbleau.fr/","navales","JwLy54NVALVQDRAn");
-		    if(!$link){
-		      die("<p>Connexion au serveur impossible</p>");
-		    }
-        if(!isset($_GET['idA'])){
-          echo "Unfound Artist";
-        }
-        else{
           $query = $this->MuAlbum->get(id);
 					$artist = $this->db->query("select nameA from MuArtist where idArtist = $row->idArtist;")->row();
 					echo "<tr>";
@@ -31,8 +23,6 @@
 					echo "<td><a href=''>".$row->birthDate."</a></td>";
 					echo "<td><a href=''>".$row->description."</a></td>";
 					echo "</tr>";
-          }
-        }
       ?>      
     <footer>
 			<hr>
