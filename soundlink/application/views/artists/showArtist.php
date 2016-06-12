@@ -19,7 +19,7 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
-		<table cellspacing=5>
+		<table>
 			<thead>
 				<tr>
 					<th>Artist Name</th>
@@ -28,14 +28,18 @@
 				</tr>
 			</thead>
 		  	<?php
-					$query = $this->MuArtist->get($id);
-				
-					echo "<tr>";
-					echo "<td>".$query->nameA."</td>";
-					echo "<td>".$query->birthDate."</td>";
-					echo "<td>".$query->description."</td>";
-					echo "</tr>";
-				?>
+					$query = $this->MuArtist->get($id);?>
+			<tr>
+				<td>
+				<?php
+					echo $query->nameA;?>
+				</td><td>
+				<?php	
+					echo $query->birthDate;?>
+				</td><td>
+				<?php
+					echo $query->description;?>
+				</td></tr>
 		</table>
     <footer>
 			<hr>
