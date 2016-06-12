@@ -14,6 +14,7 @@ class ArtistController extends CI_Controller
 		//	Maintenant, ce code sera exécuté chaque fois que ce contrôleur sera appelé.
 		$this->titre_defaut = 'ArtistList';
 		$this->load->helper('url');
+		$this->load->model('MuAlbum');
 		$this->load->model('MuArtist');
 	}
 	
@@ -25,6 +26,11 @@ class ArtistController extends CI_Controller
     public function showArtistsList()
     {
         $this->load->view('artists/showArtistsList.php');
+    }
+    
+    public function showArtist($id){
+    	$data = array('id' => $id);
+    	$this->load->view('artists/showArtist.php',$data);
     }
 	
 	/*	public function _output($output)

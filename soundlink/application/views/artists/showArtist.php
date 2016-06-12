@@ -21,12 +21,10 @@
 		</div>
       <?php
           $query = $this->MuArtist->get($id);
-					echo "<tr>";
-					echo "<td><a href=''>".$row->nameA."</a></td>";
-					echo "<td><a href=''>".$row->birthDate."</a></td>";
-					echo "<td><a href=''>".$row->description."</a></td>";
-					echo "</tr>";
-      ?>      
+					echo "Name : ".$query->nameA."<br>";
+					echo "BirthDate : ".$query->birthDate."<br>";
+					echo "Description : ".$query->description."<br>";
+      ?>  
     <footer>
 			<hr>
 			<div class="text-center">

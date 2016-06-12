@@ -65,7 +65,7 @@
 				foreach($query as $row) {
 					$artist = $this->db->query("SELECT nameA FROM MuArtist WHERE idArtist = $row->idArtist;")->row();
 					echo "<tr>";
-					echo "<td><a href=''>".$row->name."</a></td>";
+					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
 					echo "</tr>";
 				}
 				?>
