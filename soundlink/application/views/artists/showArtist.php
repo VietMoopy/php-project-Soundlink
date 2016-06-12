@@ -55,7 +55,7 @@
 			</thead>
 		  <?php
 				if (! isset ( $name ) && ! isset ( $releasedate ) && ! isset ( $genre ) && ! isset ( $artist ))
-					$query = $this->MuArtist->get_albums();
+					$query = $this->MuArtist->get_albums($id);
 				foreach($query as $row) {
 					echo "<tr>";
 					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
