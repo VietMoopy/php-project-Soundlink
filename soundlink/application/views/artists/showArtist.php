@@ -19,7 +19,7 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
-		<table>
+		<table cellspacing=5>
 			<thead>
 				<tr>
 					<th>Artist Name</th>
