@@ -14,10 +14,6 @@ class MuArtist extends CI_Model {
     public function get($id){
         return $this->db->get_where('MuArtist', array('idArtist' => $id))->row();
     }
-  
-    public function get_albums($id){
-        return $this->db->get_where('MuAlbum', array('idArtist' => $id))->row();
-    }
 
     public function get_all() {
         $query = $this->db->get('MuArtist');
@@ -25,11 +21,11 @@ class MuArtist extends CI_Model {
     }
 
     public function insert($name,$birth,$desc) {
-        $this->name = $name;
-        $this->birthDate = $birth;
-        $this->description = $desc;
-
-        $this->db->insert('MuArtist', $this);
+    	$fielddata['nameA'] = $name;
+    	$fielddata['birthDate'] = $birth;
+    	$fielddata['description'] = $desc;
+    	
+    	$this->db->insert('MuArtist', $fielddata);
     }
 
     public function update($id) {

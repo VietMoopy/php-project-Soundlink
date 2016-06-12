@@ -22,17 +22,17 @@ class MuAlbum extends CI_Model {
         return $query->result();
     }
 
-    public function insert($name,$date,$genre,$idArtist) {
-        $this->name = $name;
-        $this->releaseDate = $date;
-        $this->genre = $genre;
-        $this->globalRating = NULL;
-        $this->idArtist = $idArtist;
-
-        $this->db->insert('MuAlbum', $this);
+    public function insert($name,$date,$genre,$artist) {
+    	$fielddata['name'] = $name;
+    	$fielddata['releaseDate'] = $date;
+    	$fielddata['genre'] = $genre;
+    	$fielddata['globalRating'] = NULL;
+    	$fielddata['idArtist'] = $this->db->get_where('MuArtist', array('nameA' => $artist))->row()->idArtist;
+    	echo $fielddata['idArtist'];
+        $this->db->insert('MuAlbum', $fielddata);
     }
 
-    public function update($id,$name,$date,$genre) {
+    public function update($name,$date,$genre) {
         $this->name = $name;
         $this->releaseDate = $date;
         $this->genre = $genre;
