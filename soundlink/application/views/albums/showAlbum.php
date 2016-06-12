@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <link href="<?php echo base_url(); ?>assets/css/bootstrap.css"
 	rel="stylesheet" />
-<title>Artist</title>
+<title>Album</title>
 </head>
 <body>
 	<div class="container">
@@ -20,11 +20,12 @@
 			</h3>
 		</div>
       <?php
-          $query = $this->MuArtist->get($id);
+          $query = $this->MuAlbum->get($id);
 					echo "<tr>";
-					echo "<td><a href=''>".$row->nameA."</a></td>";
-					echo "<td><a href=''>".$row->birthDate."</a></td>";
-					echo "<td><a href=''>".$row->description."</a></td>";
+					echo "<td><a href=''>".$row->name."</a></td>";
+					echo "<td><a href=''>".$row->releaseDate."</a></td>";
+					echo "<td><a href=''>".$row->genre."</a></td>";
+					echo "<td><a href=''>".$row->globalRating."</a></td>";
 					echo "</tr>";
       ?>      
     <footer>
