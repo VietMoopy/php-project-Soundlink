@@ -34,6 +34,10 @@ class AlbumController extends CI_Controller
     	$this->load->view('albums/showAlbum.php',$data);
     }
     
+    public function addAlbum(){
+    	$this->load->view('albums/addAlbum.php');
+    }
+    
 	
 	/*	public function _output($output)
 	{
