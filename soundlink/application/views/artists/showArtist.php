@@ -20,7 +20,7 @@
 			</h3>
 		</div>
       <?php
-          $query = $this->MuAlbum->get($id);
+          $query = $this->MuArtist->get($id);
 					$artist = $this->db->query("select nameA from MuArtist where idArtist = $row->idArtist;")->row();
 					echo "<tr>";
 					echo "<td><a href=''>".$row->nameA."</a></td>";

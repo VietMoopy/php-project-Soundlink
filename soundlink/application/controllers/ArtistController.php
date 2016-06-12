@@ -26,6 +26,11 @@ class ArtistController extends CI_Controller
     {
         $this->load->view('artists/showArtistsList.php');
     }
+    
+    public function showArtist($id){
+    	$data = array('id' => $id);
+    	$this->load->view('artists/showArtist.php',$data);
+    }
 	
 	/*	public function _output($output)
 	{
