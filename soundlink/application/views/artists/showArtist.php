@@ -41,6 +41,31 @@
 					echo $query->description;?>
 				</td></tr>
 		</table>
+		<br/><br/>
+		Albums :<br/>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Release Date</th>
+					<th>Genre</th>
+					<th>Artist</th>
+				</tr>
+			</thead>
+		  <?php
+				if (! isset ( $name ) && ! isset ( $releasedate ) && ! isset ( $genre ) && ! isset ( $artist ))
+					$query = $this->MuArtist->get_albums();
+				foreach($query as $row) {
+					echo "<tr>";
+					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
+					echo "<td>".$row->releaseDate."</td>";
+					echo "<td>".$row->genre."</td>";
+					echo "</tr>";
+				}
+				?>
+		</table>
+		
     <footer>
 			<hr>
 			<div class="text-center">
