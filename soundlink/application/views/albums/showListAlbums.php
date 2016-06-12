@@ -10,34 +10,38 @@
 	<div class="container">
 		<div class="page-header">
 			<ul class="nav nav-pills pull-right">
-				<li><a href="<?php echo base_url().'albums';?>">List of albums</a></li>
-				<li><a href="">About</a></li>
+				<li><a href="<?php echo base_url().'AlbumController';?>">Albums</a></li>
+				<li><a href="<?php echo base_url().'artists';?>">Artists</a></li>
+				<li><a href="<?php echo base_url().'profile';?>">My profile</a></li>
+				<li><a href="<?php echo base_url().'about';?>">About</a></li>
 			</ul>
-			<h3 class="muted">Soundlink</h3>
+			<h3>
+				<a href="<?php echo base_url();?>">Soundlink</a>
+			</h3>
 		</div>
-		<p class="lead">Welcome to Soundlink, a social network about music !</p>
+		<p class="lead">Albums List</p>
 
 
-		<FORM method='get' action='listAlbumView.php'>
+		<!-- <FORM method='get' action='listAlbumView.php'>
 			<p>
-				Name<br> <input type="text" name="name" /><br>Release Date<br> <input
-					type="date" name="releaseDate" /><br>Genre<br> <input type="text"
-					name="genre" /><br>Artist<br> <input type="text" name="artist" /><br>
+				Name<br> <input type="text" name="name" /><br> Release Date<br> <input
+					type="date" name="releaseDate" /><br> Genre<br> <input type="text"
+					name="genre" /><br> Artist<br> <input type="text" name="artist" /><br>
 				<input type="submit" value="Ok" />
 			</p>
 		  <?php
-				extract ( $_GET );
-				if (isset ( $_GET ['name'] )) {
-					$name = $_GET ['name'];
+				extract ( $_POST );
+				if (isset ( $_POST ['name'] )) {
+					$name = $_POST ['name'];
 				}
-				if (isset ( $_GET ['releaseDate'] )) {
-					$releaseDate = $_GET ['releaseDate'];
+				if (isset ( $_POST ['releaseDate'] )) {
+					$releaseDate = $_POST ['releaseDate'];
 				}
-				if (isset ( $_GET ['genre'] )) {
-					$genre = $_GET ['genre'];
+				if (isset ( $_POST ['genre'] )) {
+					$genre = $_POST ['genre'];
 				}
-				if (isset ( $_GET ['artist'] )) {
-					$artist = $_GET ['artist'];
+				if (isset ( $_POST ['artist'] )) {
+					$artist = $_POST ['artist'];
 				}
 				if (isset ( $artist )) {
 					$this->db->query ( "select idA from MuArtist where \"$artist\" = nomA" );
@@ -47,33 +51,30 @@
 					 values (\"$name\",\"$releaseDate\",\"$genre\",\"$real\")" );
 				}
 				?>
-		</FORM>
+		</FORM>*/ -->
 
 		<table>
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Name</th>
-					<th>Release Date</th>
-					<th>Genre</th>
+					<th>ReleaseDate</th>
 					<th>Artist</th>
-					<th>Link</th>
+					<th>Genre</th>
 				</tr>
 			</thead>
 		  <?php
-				$sql = "SELECT * FROM MuAlbum";
-				$stmt = $this->db->query ( $sql );
-				$stmt->setFetchMode ( PDO::FETCH_CLASS, "MuAlbum" );
-				if (! $stmt) {
-					echo "Problème";
-				} else {
-					while ( $row = $stmt->setFetchMode ( PDO::FETCH_ASSOC ) ) {
-						
-						echo "<tr>";
-						echo "<td>" . $row ["name"] . "</td>";
-						echo "<td>" . $row ["releaseDate"] . "</td>";
-						echo "<td>" . $row ["genre"] . "</td>";
-						echo "<td>" . $row ["nameA"] . "</td>";
-					}
+				if (! isset ( $name ) && ! isset ( $releasedate ) && ! isset ( $genre ) && ! isset ( $artist ))
+					$query = $this->MuAlbum->get_all();
+				foreach($query as $row) {
+					$artist = $this->db->query("SELECT nameA FROM MuArtist WHERE idArtist = $row->idArtist;")->row();
+					echo "<tr>";
+					echo "<th>".$row->idAlbum ."</th>";
+					echo "<th>".$row->name ."</th>";
+					echo "<th>".$row->releaseDate."</th>";
+					echo "<th>".$artist->nameA."</th>";
+					echo "<th>".$row->genre."</th>";
+					echo "</tr>";
 				}
 				?>
 		</table>

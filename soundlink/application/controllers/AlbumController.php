@@ -5,14 +5,16 @@ class AlbumController extends CI_Controller
 	
 	private $titre_defaut;
 	
+	
 	public function __construct()
 	{
 		//	Obligatoire
 		parent::__construct();
 		
 		//	Maintenant, ce code sera exécuté chaque fois que ce contrôleur sera appelé.
-		$this->titre_defaut = 'Mon super site';
+		$this->titre_defaut = 'AlbumsList';
 		$this->load->helper('url');
+		$this->load->model('MuAlbum');
 	}
 	
 	    public function index()

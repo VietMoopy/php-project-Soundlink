@@ -74,7 +74,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> 'mysql:host=dwarves.iut-fbleau.fr;dbname=navales',
 	'hostname' => 'mysql:host=dwarves.iut-fbleau.fr',
 	'username' => 'navales',
 	'password' => 'JwLy54NVALVQDRAn',
