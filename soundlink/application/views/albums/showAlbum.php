@@ -34,7 +34,7 @@
 						echo "GlobalRating : ".$query->globalRating."<br>";
 					else
 						echo "GlobalRating : -/5<br>";
-					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$query->idArtist.'\'>'.$query->nameA."</a></td>";?>
+					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$query->idArtist.'\'>'.$query->idArtist."</a></td>";?>
 				</td></tr>
 		</table>
     <footer>
