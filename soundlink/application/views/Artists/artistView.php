@@ -24,25 +24,13 @@
           echo "Unfound Artist";
         }
         else{
-          $idA = $_GET['idA'];
-          $res = $link->prepare("select nameA, birthDate, description from MuArtist where idArtist = :idA ");
-          $res->bindParam(':idA', $idA);
-          $res->execute();
-		      if(!$res){
-		      echo "Problème";
-		      }
-          echo "<h1>".$res["nameA"]."</h1><br/>";
-          echo "<h5>".$res["birthDate"]."</h5><br/>";
-          echo "<p>".$res["description"]."</p><br/>";
-          
-          $idA = $_GET['idA'];
-          $res = $link->prepare("select name, releaseDate from MuArtist natural join MuAlbum where idArtist = :idA ");
-          $res->bindParam(':idA', $idA);
-          $res->execute();
-          
-          foreach($res as $value){
-          echo "<h1>".$value["name"]."</h1>"." ";
-          echo "<h5>".$value["releaseDate"]."</h5><br/>";
+          $query = $this->MuAlbum->get(id);
+					$artist = $this->db->query("select nameA from MuArtist where idArtist = $row->idArtist;")->row();
+					echo "<tr>";
+					echo "<td><a href=''>".$row->nameA."</a></td>";
+					echo "<td><a href=''>".$row->birthDate."</a></td>";
+					echo "<td><a href=''>".$row->description."</a></td>";
+					echo "</tr>";
           }
         }
       ?>      
