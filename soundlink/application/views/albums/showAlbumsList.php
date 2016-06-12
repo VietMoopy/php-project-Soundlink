@@ -70,9 +70,7 @@
 					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
 					echo "<td>".$row->releaseDate."</td>";
 					echo "<td>".$row->genre."</td>";
-					echo $row->idArtist > $id;
-					$request = $this->MuAlbum->get($id)."<br/>";
-					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$request->name."</a></td>";
+					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->idArtist."</a></td>";
 					echo "</tr>";
 				}
 				?>
