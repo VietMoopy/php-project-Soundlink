@@ -70,7 +70,7 @@
 					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
 					echo "<td>".$row->releaseDate."</td>";
 					echo "<td>".$row->genre."</td>";
-					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->nameA."</a></td>";
+					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->name."</a></td>";
 					echo "</tr>";
 				}
 				?>
