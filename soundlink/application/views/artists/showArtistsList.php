@@ -57,6 +57,8 @@
 			<thead>
 				<tr>
 					<th>Artist Name</th>
+					<th>BirthDate</th>
+					<th>Description</th>
 				</tr>
 			</thead>
 		  <?php
@@ -65,6 +67,8 @@
 				foreach($query as $row) {
 					echo "<tr>";
 					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->nameA."</a></td>";
+					echo "<td>".$row->birthDate."</td>";
+					echo "<td>".$row->description."</td>";
 					echo "</tr>";
 				}
 				?>

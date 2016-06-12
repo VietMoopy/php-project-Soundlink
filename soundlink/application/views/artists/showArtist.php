@@ -24,7 +24,25 @@
 					echo "Name : ".$query->nameA."<br>";
 					echo "BirthDate : ".$query->birthDate."<br>";
 					echo "Description : ".$query->description."<br>";
-      ?>  
+      ?>
+		<table>
+			<thead>
+				<tr>
+					<th>Artist Name</th>
+					<th>BirthDate</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+		  	<?php
+					$query = $this->MuArtist->get($id);
+				
+					echo "<tr>";
+					echo "<td>".$query->nameA."</td>";
+					echo "<td>".$query->birthDate."</td>";
+					echo "<td>".$query->description."</td>";
+					echo "</tr>";
+				?>
+		</table>
     <footer>
 			<hr>
 			<div class="text-center">
