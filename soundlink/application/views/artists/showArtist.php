@@ -20,13 +20,11 @@
 			</h3>
 		</div>
       <?php
-      $id;
           $query = $this->MuArtist->get($id);
 					echo "Name : ".$query->nameA."<br>";
 					echo "BirthDate : ".$query->birthDate."<br>";
 					echo "Description : ".$query->description."<br>";
-      ?>
-      </table>      
+      ?>  
     <footer>
 			<hr>
 			<div class="text-center">
