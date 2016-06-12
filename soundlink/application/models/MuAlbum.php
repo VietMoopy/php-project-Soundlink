@@ -14,7 +14,7 @@ class MuAlbum extends CI_Model {
     }
 
     public function get($id){
-        return $this->db->get_where('MuAlbum', array('id' => $id))->row();
+        return $this->db->get_where('MuAlbum', array('idAlbum' => $id))->row();
     }
 
     public function get_all() {
