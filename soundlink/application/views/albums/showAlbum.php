@@ -19,6 +19,15 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Release</th>
+					<th>Rating</th>
+					<th>Artist</th>
+				</tr>
+			</thead>
 		<?php
 					$query = $this->MuAlbum->get($id);?>
 			<tr>
