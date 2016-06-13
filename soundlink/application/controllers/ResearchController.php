@@ -24,10 +24,12 @@ class ResearchController extends CI_Controller
     }
 	
 		public function searchAlbum(){
-			$this->load->view('search/searchAlbum');
+			$data['boolean'] = 1;
+			$this->load->view('search/searchAlbum',$data);
 		}
   
     public function searchArtist(){
+    	
       $this->load->view('search/searchArtist');
     }
     

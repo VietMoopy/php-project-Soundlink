@@ -23,14 +23,16 @@ class AlbumController extends CI_Controller
         $this->showAlbumsList();
     }
 
-    public function showAlbumsList()
+    public function showAlbumsList($arg='',$type='')
     {
-        $this->load->view('albums/showAlbumsList.php');
+    	$data['arg'] = $arg;
+    	$data['type'] = $type;
+        $this->load->view('albums/showAlbumsList.php',$data);
     }
     
     public function showAlbum($id)
     {
-    	$data = array('id' => $id);
+    	$data['id'] = $id;
     	$this->load->view('albums/showAlbum.php',$data);
     }
     

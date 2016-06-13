@@ -32,7 +32,6 @@
 							echo "<option>" . $artist->nameA."</option>";
 						}
 						?>
-
 			</select><br>
 			<br> <br> <br> <input type="submit" value="Insert">
 		<?php

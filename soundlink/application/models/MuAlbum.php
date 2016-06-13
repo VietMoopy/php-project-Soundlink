@@ -28,6 +28,15 @@ class MuAlbum extends CI_Model {
       }
       return $this->db->get();
     }
+    
+    public function get_from_genre($genre){
+    	return $this->db->get_where('MuAlbum', array('genre' => $genre))->result();
+    }
+    
+    public function get_from_artist($artist){
+    	$idArtist = $this->db->get_where('MuArtist',array('nameA' => $artist))->row()->idArtist;
+    	return $this->db->get_where('MuAlbum', array('idArtist' => $idArtist))->result();
+    }
 
     public function get_all() {
         $query = $this->db->get('MuAlbum');
