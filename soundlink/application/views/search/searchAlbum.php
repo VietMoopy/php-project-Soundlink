@@ -28,11 +28,11 @@
         Note :
       </h4>
       <input type="radio" name="note" value="null" checked>No minimum<br/>
-      <input type="radio" name="note" value="1" checked>One or plus<br/>
-      <input type="radio" name="note" value="2" checked>Two or plus<br/>
-      <input type="radio" name="note" value="3" checked>Three or plus<br/>
-      <input type="radio" name="note" value="4" checked>Four or plus<br/>
-      <input type="radio" name="note" value="5" checked>Five or plus<br/>
+      <input type="radio" name="note" value="1" >One or plus<br/>
+      <input type="radio" name="note" value="2" >Two or plus<br/>
+      <input type="radio" name="note" value="3" >Three or plus<br/>
+      <input type="radio" name="note" value="4" >Four or plus<br/>
+      <input type="radio" name="note" value="5" >Five or plus<br/>
       <br><h4>
         Min Date :
       </h4>

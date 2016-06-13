@@ -21,12 +21,12 @@ class MuRating extends CI_Model {
         return $query->result();
     }
 
-    public function insert() {
-        $this->title = 'CodeIgniter 101';
-        $this->content = '<p>Say what you want about CI, it still rocks</p>';
-        $this->date = time();
-
-        $this->db->insert('MuRating', $this);
+    public function insert($value,$album) {
+    	$fielddata['ratingValue'] = $value;
+    	$fielddata['dateRating'] = date();
+    	$fielddata['username'] = 'not yet';
+    	$fielddata['idAlbum'] = $album;
+      $this->db->insert('MuRating', $fielddata);
     }
 
     public function update($id) {

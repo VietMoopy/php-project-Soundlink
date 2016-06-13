@@ -35,11 +35,11 @@
 			<h4>
         Note :
       </h4>
-      <input type="radio" name="note" value="1" checked>One<br/>
-      <input type="radio" name="note" value="2" checked>Two<br/>
+      <input type="radio" name="note" value="1" >One<br/>
+      <input type="radio" name="note" value="2" >Two<br/>
       <input type="radio" name="note" value="3" checked>Three<br/>
-      <input type="radio" name="note" value="4" checked>Four<br/>
-      <input type="radio" name="note" value="5" checked>Five<br/>
+      <input type="radio" name="note" value="4" >Four<br/>
+      <input type="radio" name="note" value="5" >Five<br/>
 			<input type="submit" value="Submit">
 		</form>
     <footer>
