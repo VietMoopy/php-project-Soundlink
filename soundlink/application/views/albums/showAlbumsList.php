@@ -21,7 +21,9 @@
 		</div>
 		<p class="lead">Albums List</p>
 		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an album</a>
-
+		<br/><br/>
+		<a href="<?php echo base_url().'ResearchController/searchAlbum';?>">Find an album</a>
+		<br/><br/>
 		<table>
 			<thead>
 				<tr>
@@ -29,14 +31,29 @@
 				</tr>
 			</thead>
 		  <?php
-				if(isset($idA) || isset($genre)){
-					$query = $this->MuAlbum->get_all();
+				if(!isset($name)){
+					$name = null;
+				}
+				if(!isset($note)){
+					$note = null;
+				}
+				if(!isset($date)){
+					$date = null;
+				}
+				if(!isset($genre)){
+					$genre = null;
+				}
+				if(!isset($artist)){
+					$artist = null;
+				}
+				//$query = $this->MuAlbum->get_per($name,$note,$date,$genre,$artist);
+				$query = $this->MuAlbum->get_all();
 				foreach($query as $row) {
 					echo "<tr>";
 					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
 					echo "</tr>";
 				}
-				}
+				
 				?>
 		</table>
 		<hr>

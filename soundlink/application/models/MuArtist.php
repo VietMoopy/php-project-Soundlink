@@ -20,10 +20,10 @@ class MuArtist extends CI_Model {
         return $query->result();
     }
   
-    public function get_perName($name){
+    public function get_per($name){
       $this->db->select('nameA');
       $this->db->from('MuArtist');
-      if(isset($name)){
+      if($name != null){
         $this->db->where('nameA',$name);
       }
       return $this->db->get();
