@@ -27,13 +27,13 @@
 				placeholder="aaaa-mm-dd"> <br> <label>Description</label> <input
 				type="text" name="description" id="description"> <br> <br> <br> <br>
 			<input type="submit" value="Insert">
-<?php
-extract($_POST);
-if(isset($name) && ($birthDate) && ($description)){
-	$this->MuArtist->insert($name,$birthDate,$description);
-	echo 'Insert done';
-}
-?>
+			<?php
+			extract($_POST);
+			if(isset($name) && ($birthDate) && ($description)){
+				$this->MuArtist->insert($name,$birthDate,$description);
+				echo 'Insert done';
+			}
+			?>
 		</form>
 		<hr>
 		<footer>

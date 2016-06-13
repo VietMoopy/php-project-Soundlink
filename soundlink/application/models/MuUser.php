@@ -19,12 +19,12 @@ class MuUser extends CI_Model {
         return $query->result();
     }
 
-    public function insert() {
-        $this->title = 'CodeIgniter 101';
-        $this->content = '<p>Say what you want about CI, it still rocks</p>';
-        $this->date = time();
-
-        $this->db->insert('MuUser', $this);
+    public function insert($username,$mail,$pssword) {
+    	$fielddata['username'] = $username;
+    	$fielddata['password'] = $pssword;
+    	$fielddata['email'] = $mail;
+      $fielddata['validity'] = false;
+      $this->db->insert('MuUser', $fielddata);
     }
 
     public function update($id) {

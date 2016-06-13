@@ -22,37 +22,6 @@
 		<p class="lead">Artists List</p>
 		<a href="<?php echo base_url().'ArtistController/addArtist';?>">Add an artist</a>
 
-		<!-- <FORM method='get' action='listAlbumView.php'>
-			<p>
-				Name<br> <input type="text" name="name" /><br> Release Date<br> <input
-					type="date" name="releaseDate" /><br> Genre<br> <input type="text"
-					name="genre" /><br> Artist<br> <input type="text" name="artist" /><br>
-				<input type="submit" value="Ok" />
-			</p>
-		  <?php
-				extract ( $_POST );
-				if (isset ( $_POST ['name'] )) {
-					$name = $_POST ['name'];
-				}
-				if (isset ( $_POST ['releaseDate'] )) {
-					$releaseDate = $_POST ['releaseDate'];
-				}
-				if (isset ( $_POST ['genre'] )) {
-					$genre = $_POST ['genre'];
-				}
-				if (isset ( $_POST ['artist'] )) {
-					$artist = $_POST ['artist'];
-				}
-				if (isset ( $artist )) {
-					$this->db->query ( "select idA from MuArtist where \"$artist\" = nomA" );
-				}
-				if (isset ( $name ) && isset ( $releasedate ) && isset ( $genre ) && isset ( $artist )) {
-					$this->db->query ( "insert into MuAlbum(name,releaseDate,genre,idArtist) 
-					 values (\"$name\",\"$releaseDate\",\"$genre\",\"$real\")" );
-				}
-				?>
-		</FORM>*/ -->
-
 		<table>
 			<thead>
 				<tr>
@@ -60,8 +29,7 @@
 				</tr>
 			</thead>
 		  <?php
-				if (! isset ( $name ) && ! isset ( $releasedate ) && ! isset ( $genre ) && ! isset ( $artist ))
-					$query = $this->MuArtist->get_all();
+				$query = $this->MuArtist->get_all();
 				foreach($query as $row) {
 					echo "<tr>";
 					echo "<td><a href='".base_url().'ArtistController/showArtist/'.$row->idArtist.'\'>'.$row->nameA."</a></td>";
