@@ -20,6 +20,10 @@
 			</h3>
 		</div>
     <form method='post' action=<?php current_url();?>>
+			<h4>
+        Name :
+      </h4>
+			<input type="text" name="name"/><br/>
       <h4>
         Note :
       </h4>

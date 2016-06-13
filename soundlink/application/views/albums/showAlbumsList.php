@@ -20,7 +20,7 @@
 			</h3>
 		</div>
 		<p class="lead">Albums List</p>
-		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an artist</a>
+		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an album</a>
 
 		<table>
 			<thead>
@@ -29,12 +29,13 @@
 				</tr>
 			</thead>
 		  <?php
-				if(isset($idA) || isset($genre))
-				$query = $this->MuAlbum->get_all();
+				if(isset($idA) || isset($genre)){
+					$query = $this->MuAlbum->get_all();
 				foreach($query as $row) {
 					echo "<tr>";
 					echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
 					echo "</tr>";
+				}
 				}
 				?>
 		</table>

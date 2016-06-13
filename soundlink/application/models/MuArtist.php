@@ -19,6 +19,15 @@ class MuArtist extends CI_Model {
         $query = $this->db->get('MuArtist');
         return $query->result();
     }
+  
+    public function get_perName($name){
+      $this->db->select('nameA');
+      $this->db->from('MuArtist');
+      if(isset($name)){
+        $this->db->where('nameA',$name);
+      }
+      return $this->db->get();
+    }
 
     public function insert($name,$birth,$desc) {
     	$fielddata['nameA'] = $name;
