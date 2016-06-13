@@ -13,7 +13,7 @@
 				<li><a href="<?php echo base_url().'AlbumController';?>">Albums</a></li>
 				<li><a href="<?php echo base_url().'ArtistController';?>">Artists</a></li>
 				<li><a href="<?php echo base_url().'ProfileController';?>">My profile</a></li>
-				<li><a href="<?php echo base_url().'AboutConntroller';?>">About</a></li>
+				<li><a href="<?php echo base_url().'AboutController';?>">About</a></li>
 			</ul>
 			<h3>
 				<a href="<?php echo base_url();?>">Soundlink</a>

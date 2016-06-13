@@ -1,6 +1,6 @@
 <?php
 
-class AlbumController extends CI_Controller
+class ResearchController extends CI_Controller
 {
 	
 	private $titre_defaut;
@@ -12,7 +12,7 @@ class AlbumController extends CI_Controller
 		parent::__construct();
 		
 		//	Maintenant, ce code sera ex�cut� chaque fois que ce contr�leur sera appel�.
-		$this->titre_defaut = 'AlbumsList';
+		$this->titre_defaut = 'Research';
 		$this->load->helper('url');
 		$this->load->model('MuAlbum');
 		$this->load->model('MuArtist');
@@ -20,22 +20,15 @@ class AlbumController extends CI_Controller
 	
 	    public function index()
     {
-        $this->showAlbumsList();
+        $this->searchAlbum();
     }
-
-    public function showAlbumsList()
-    {
-        $this->load->view('albums/showAlbumsList.php');
-    }
-    
-    public function showAlbum($id)
-    {
-    	$data = array('id' => $id);
-    	$this->load->view('albums/showAlbum.php',$data);
-    }
-    
-    public function addAlbum(){
-    	$this->load->view('albums/addAlbum.php');
+	
+		public function searchAlbum(){
+			$this->load->view('search/searchAlbum');
+		}
+  
+    public function searchArtist(){
+      $this->load->view('search/searchArtist');
     }
     
 	
