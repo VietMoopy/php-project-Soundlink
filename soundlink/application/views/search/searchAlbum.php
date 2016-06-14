@@ -20,6 +20,7 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
+<<<<<<< HEAD
 		<form method='post' action=<?php current_url();?>>
 			<h4>Note :</h4>
 			<input type="radio" name="note" value="null" checked>No minimum<br />
@@ -34,6 +35,35 @@
 			<input type="text" name="genre" id="genre"> <br> <br />
 			<h4>Artist :</h4>
 			<select name='artist'>
+=======
+    <form method='post' action=<?php current_url();?>>
+			<h4>
+        Name :
+      </h4>
+			<input type="text" name="name"/><br/>
+      <h4>
+        Note :
+      </h4>
+      <input type="radio" name="note" value="null" checked>No minimum<br/>
+      <input type="radio" name="note" value="1" >One or plus<br/>
+      <input type="radio" name="note" value="2" >Two or plus<br/>
+      <input type="radio" name="note" value="3" >Three or plus<br/>
+      <input type="radio" name="note" value="4" >Four or plus<br/>
+      <input type="radio" name="note" value="5" >Five or plus<br/>
+      <br><h4>
+        Min Date :
+      </h4>
+      <input type="date" name="minDate" />
+      <br/><h4>
+        Genre :
+      </h4>
+      <input type="text" name="genre" id="genre"> <br>
+      <br/><h4>
+        Artist :
+      </h4>
+      </label> <select name='artist' size='1' id='artist'>
+          <option>All</option>
+>>>>>>> origin/master
     				  <?php
 										$artists = $this->MuArtist->get_all ();
 										foreach ( $artists as $artist ) {

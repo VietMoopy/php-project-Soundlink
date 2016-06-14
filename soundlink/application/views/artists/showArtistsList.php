@@ -21,7 +21,9 @@
 		</div>
 		<p class="lead">Artists List</p>
 		<a href="<?php echo base_url().'ArtistController/addArtist';?>">Add an artist</a>
-
+		<br/><br/>
+		<a href="<?php echo base_url().'RsearchController/searchArtist';?>">Find an artist</a>
+		<br/><br/>
 		<table>
 			<thead>
 				<tr>
@@ -29,6 +31,10 @@
 				</tr>
 			</thead>
 		  <?php
+				if(!isset($name)){
+					$name = null;
+				}
+				//$query = $this->MuArtist->get_per($name);
 				$query = $this->MuArtist->get_all();
 				foreach($query as $row) {
 					echo "<tr>";

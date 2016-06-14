@@ -19,9 +19,20 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
+    <form method='post' action=<?php current_url();?>>
+			<h4>
+        Name :
+      </h4>
+			<input type="text" name="name"/><br/>
+			<input type="submit" value="Submit">
     <?php
-    
-    ?>
+		extract($_POST);
+		if(isset ($name)){
+      echo $this->db->query("SELECT * FROM MuArtist WHERE nameA = \"$name\";")->row()->nameA;
+			echo 'Insert done';
+		}
+		?>
+    </form>
     <footer>
 			<hr>
 			<div class="text-center">

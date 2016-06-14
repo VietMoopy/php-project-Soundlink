@@ -17,14 +17,23 @@ class MuAlbum extends CI_Model {
         return $this->db->get_where('MuAlbum', array('idAlbum' => $id))->row();
     }
   
-    public function get_per($idA,$genre){
+    public function get_per($name,$note,$date,$genre,$artist){
       $this->db->select('name','genre','idArtist');
       $this->db->from('MuAlbum');
-      if(isset($idA)){
-        $this->db->where('idArtist', $idA);
+      if($artist != null){
+        $this->db->where('idArtist', $artist);
       }
-      if(isset($genre)){
+      if($genre != null){
         $this->db->where('genre', $genre);
+      }
+      /*if($date != null){
+        $this->db->where('releaseDate', $date);
+      }
+      if($note != null){
+        $this->db->where('globalRating', $note);
+      }*/
+      if($name != null){
+        $this->db->where('name', $name);
       }
       return $this->db->get();
     }
