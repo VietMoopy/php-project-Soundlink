@@ -40,7 +40,7 @@ class MuRating extends CI_Model {
 		$fielddata ['ratingValue'] = $value;
 		$datestring = '%Y-%m-%d';
 		$fielddata ['dateRating'] = mdate ( $datestring );
-		$this->db->where('id', $id);
+		$this->db->where('idRating', $id);
 		$this->db->update('MuRating', $fielddata);
 	}
 	public function delete($id) {

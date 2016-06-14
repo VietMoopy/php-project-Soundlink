@@ -16,6 +16,7 @@ class AlbumController extends CI_Controller
 		$this->load->helper('url');
 		$this->load->model('MuAlbum');
 		$this->load->model('MuArtist');
+		$this->load->model('MuRating');
 	}
 	
 	    public function index()
