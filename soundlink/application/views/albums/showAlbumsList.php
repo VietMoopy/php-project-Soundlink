@@ -20,8 +20,6 @@
 			</h3>
 		</div>
 		<p class="lead">Albums List</p>
-		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an album</a><br>
-		<a href="<?php echo base_url().'ResearchController/searchAlbum';?>">Search an album</a>
 		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an album</a>
 		<br/><br/>
 		<a href="<?php echo base_url().'ResearchController/searchAlbum';?>">Find an album</a>

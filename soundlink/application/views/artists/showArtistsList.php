@@ -22,7 +22,7 @@
 		<p class="lead">Artists List</p>
 		<a href="<?php echo base_url().'ArtistController/addArtist';?>">Add an artist</a>
 		<br/><br/>
-		<a href="<?php echo base_url().'RsearchController/searchArtist';?>">Find an artist</a>
+		<a href="<?php echo base_url().'ResearchController/searchArtist';?>">Find an artist</a>
 		<br/><br/>
 		<table>
 			<thead>
