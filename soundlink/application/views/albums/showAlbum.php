@@ -35,13 +35,30 @@
 			<h4>
         Note :
       </h4>
-      <input type="radio" name="note" value="1" >One<br/>
-      <input type="radio" name="note" value="2" >Two<br/>
-      <input type="radio" name="note" value="3" checked>Three<br/>
-      <input type="radio" name="note" value="4" >Four<br/>
-      <input type="radio" name="note" value="5" >Five<br/>
-			<input type="submit" value="Submit">
+      <input type="radio" name="value" value="1" >One<br/>
+      <input type="radio" name="value" value="2" >Two<br/>
+      <input type="radio" name="value" value="3" checked>Three<br/>
+      <input type="radio" name="value" value="4" >Four<br/>
+      <input type="radio" name="value" value="5" >Five<br/>
+			<input name="bouton" type="submit" value="Submit">
 		</form>
+		 <?php
+				extract ( $_POST );
+				if(isset($_POST['bouton'])){
+				if (isset ($value)) {
+					$idRating = $this->MuRating->checkRating($id,"user");
+					if($idRating != null){
+						$idRating = $idRating->idRating;
+						$this->MuRating->update($value,$id);
+						echo "Votre note a bien ete mise a jour";
+					}
+					else{
+					$this->MuRating->insert($value,'user',$id);
+					echo "Votre note a bien ete prise en compte";
+				}
+				}
+				}
+				?>
     <footer>
 			<hr>
 			<div class="text-center">
