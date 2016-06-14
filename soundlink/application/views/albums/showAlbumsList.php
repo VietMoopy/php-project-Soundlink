@@ -20,15 +20,12 @@
 			</h3>
 		</div>
 		<p class="lead">Albums List</p>
-<<<<<<< HEAD
 		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an album</a><br>
-<a href="<?php echo base_url().'ResearchController/searchAlbum';?>">Search an album</a>
-=======
+		<a href="<?php echo base_url().'ResearchController/searchAlbum';?>">Search an album</a>
 		<a href="<?php echo base_url().'AlbumController/addAlbum';?>">Add an album</a>
 		<br/><br/>
 		<a href="<?php echo base_url().'ResearchController/searchAlbum';?>">Find an album</a>
 		<br/><br/>
->>>>>>> origin/master
 		<table>
 			<thead>
 				<tr>
@@ -36,7 +33,6 @@
 				</tr>
 			</thead>
 		  <?php
-<<<<<<< HEAD
 		  if(isset($type)){
 				if($type == 'genre'){
 					$arg = str_replace('%20', ' ', $arg);
@@ -65,7 +61,7 @@
 					}
 				}
 		  }
-=======
+/*
 				if(!isset($name)){
 					$name = null;
 				}
@@ -89,7 +85,7 @@
 					echo "</tr>";
 				}
 				
->>>>>>> origin/master
+>>>>>>> origin/master*/
 				?>
 		</table>
 		<hr>
