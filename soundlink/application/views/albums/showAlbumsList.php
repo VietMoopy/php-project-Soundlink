@@ -41,7 +41,7 @@
 						echo "</tr>";
 					}
 				}
-				else if($type == 'artist'){
+				if($type == 'artist'){
 					$arg = str_replace('%20', ' ', $arg);
 					$query = $this->MuAlbum->get_from_artist($arg);
 					foreach($query as $row) {
@@ -50,6 +50,16 @@
 						echo "</tr>";
 					}
 				}
+				if($type == 'name'){
+					$arg = str_replace('%20', ' ', $arg);
+					$query = $this->MuAlbum->get_from_name($arg);
+					foreach($query as $row) {
+						echo "<tr>";
+						echo "<td><a href='".base_url().'AlbumController/showAlbum/'.$row->idAlbum.'\'>'.$row->name."</a></td>";
+						echo "</tr>";
+					}
+				}
+			}
 				else{
 					$query = $this->MuAlbum->get_all();
 					foreach($query as $row) {
@@ -58,7 +68,6 @@
 						echo "</tr>";
 					}
 				}
-		  }
 /*
 				if(!isset($name)){
 					$name = null;

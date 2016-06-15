@@ -25,23 +25,16 @@
       </h4>
 			<input type="text" name="name"/><br/>
       <h4>
-        Note :
-      </h4>
-      <input type="radio" name="note" value="null" checked>No minimum<br/>
-      <input type="radio" name="note" value="1" >One or plus<br/>
-      <input type="radio" name="note" value="2" >Two or plus<br/>
-      <input type="radio" name="note" value="3" >Three or plus<br/>
-      <input type="radio" name="note" value="4" >Four or plus<br/>
-      <input type="radio" name="note" value="5" >Five or plus<br/>
-      <br><h4>
-        Min Date :
-      </h4>
-      <input type="date" name="minDate" />
-      <br/><h4>
+				<input name ="bouton2" type="submit" value="Submit">
+	  </form>
+<form method='post' action=<?php current_url();?>>
         Genre :
       </h4>
       <input type="text" name="genre" id="genre"> <br>
       <br/><h4>
+				<input name ="bouton1" type="submit" value="Submit">
+</form>
+<form method='post' action=<?php current_url();?>>
         Artist :
       </h4>
       </label> <select name='artist' size='1' id='artist'>
@@ -53,24 +46,26 @@
 										}
 										?>
 	<option value=1 selected>All</option>
-
 			</select><br> <br /> <br /> <input name ="bouton" type="submit" value="Submit">
-    <?php
-				extract ( $_POST );
-				if(isset($_POST['bouton'])){
-				if (isset ( $genre ) && $genre != "") {
-					redirect ( base_url () . "AlbumController/showAlbumsList/$genre/genre" );
-				}
-				switch ($_POST ['artist']) {
-					case 1 :
-						break;
-					default :
-					redirect ( base_url () . "AlbumController/showAlbumsList/$artist/artist" );
-						break;
-				}
-				}
-				?>
     </form>
+	    <?php
+				extract ( $_POST );
+				if(isset($_POST['bouton2'])){
+						if (isset ( $name ) && $name != "") {
+					redirect ("AlbumController/showAlbumsList/$name/name" );
+				}
+				}
+				if(isset($_POST['bouton1'])){
+						if (isset ( $genre ) && $genre != "") {
+							redirect ("AlbumController/showAlbumsList/$genre/genre" );
+						}
+				}
+			if(isset($_POST['bouton'])){
+						if (isset ( $artist ) && $artist != "") {
+					redirect ("AlbumController/showAlbumsList/$artist/artist" );
+				}
+		}
+				?>
 		<footer>
 			<hr>
 			<div class="text-center">

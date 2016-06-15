@@ -41,6 +41,13 @@ class MuAlbum extends CI_Model {
     public function get_from_genre($genre){
     	return $this->db->get_where('MuAlbum', array('genre' => $genre))->result();
     }
+  
+      public function get_from_name($name){
+      $this->db->select('*');
+      $this->db->from('MuAlbum');
+      $this->db->like('name', $name);
+      return $this->db->get()->result();
+    }
     
     public function get_from_artist($artist){
     	$idArtist = $this->db->get_where('MuArtist',array('nameA' => $artist))->row()->idArtist;
