@@ -19,21 +19,10 @@
 				<a href="<?php echo base_url();?>">Soundlink</a>
 			</h3>
 		</div>
-		<h4>Add Artist</h4>
-		<form method="post" action=<?php current_url();?>>
-			<label>Name</label> <input type="text" name="name" id="name"> <br> <label>BirthDate</label>
-			<input type="date" name="birthDate" id="birthDate"
-				placeholder="aaaa-mm-dd"> <br> <label>Description</label> <input
-				type="text" name="description" id="description"> <br> <br> <br> <br>
-			<input type="submit" value="Insert">
-			<?php
-			extract($_POST);
-			if(isset($name) && ($birthDate) && ($description)){
-				$this->MuArtist->insert($name,$birthDate,$description);
-				echo 'Insert done';
-			}
-			?>
-		</form>
+		<p class="lead">Who are we ? <br><br> We are currently students at the IT of Senart-Fontainebleau<br><br>
+    What is Soundlink ? <br><br>
+     It's a musical social network where you discover new albums and artists and share your favorite albums and artists with everybody!
+    </p>
 		<hr>
 		<footer>
 			<div class="text-center">
