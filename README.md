@@ -1,7 +1,7 @@
 # php-project-Soundlink
 A social network about music by Navales Vincent and Nguyen Alexandre using CodeIgniter Framework
 
-To try our website, clone it using the https git link and create a container using this link on CodeAnywhere, run it and go in the soundlink folder, that's it.
+To try our website, clone it using the https git link and create a container using this link on CodeAnywhere, run it and go in the soundlink folder, that's it.<br><br>
 <html>
 <head>
   <meta charset="latin1">
